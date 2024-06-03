@@ -18,7 +18,11 @@ class TypeProducts extends Products {
 
     // getter
     public function getType() {
-        return "Tipologia prodotto:" . $this->typeName;
+        return $this->typeName;
+    }
+
+    public function getCategory() {
+        return $this->category;
     }
 }
 

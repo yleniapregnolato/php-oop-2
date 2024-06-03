@@ -23,10 +23,6 @@ class Products {
     public function getPrice() {
         return $this->price;
     }
-
-    public function getFullInfo() {
-        return $this->name . $this->image . $this->price . "€";
-    }
     
 }
 

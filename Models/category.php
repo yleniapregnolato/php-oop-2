@@ -2,13 +2,12 @@
 
 class Category {
     private string $name;
-    private string $icon;
+    // private string $icon;
 
     // costruttore
-    public function __construct(string $_name, string $_icon)
+    public function __construct(string $_name)
     {
         $this->name = $_name;
-        $this->icon =$_icon;
     }
 
     // getter
@@ -20,9 +19,6 @@ class Category {
         return $this->icon;
     }
 
-    public function getFullCategory() {
-        return $this->name . $this->icon;
-    }
 }
 
 
