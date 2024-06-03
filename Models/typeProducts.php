@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/products.php";
-
+require_once __DIR__ . "/category.php";
 
 class TypeProducts extends Products {
     private string $typeName;
