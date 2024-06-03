@@ -11,7 +11,7 @@ class Products {
         $this->image = $_image;
         $this->price = $_price;
     }
-    
+    // getter
     public function getName() {
         return $this->name;
     }
@@ -25,7 +25,7 @@ class Products {
     }
 
     public function getFullInfo() {
-        return $this->name . $this->image . $this->price;
+        return $this->name . $this->image . $this->price . "€";
     }
     
 }
