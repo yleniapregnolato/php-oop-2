@@ -1,6 +1,8 @@
 <?php
-
+require_once __DIR__ . "/icon.php";
 class Category {
+    use Icon;
+
     private string $name;
     // private string $icon;
 
@@ -13,10 +15,6 @@ class Category {
     // getter
     public function getCategoryName() {
         return $this->name;
-    }
-
-    public function getIcon() {
-        return $this->icon;
     }
 
 }

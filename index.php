@@ -2,11 +2,14 @@
     require_once __DIR__ . "/models/products.php";
     require_once __DIR__ . "/models/category.php";
     require_once __DIR__ . "/models/typeProducts.php";
+    require_once __DIR__ . "/models/icon.php";
 
     // categorie
-    $category1 = new Category("gatto", "icon");
-    $category2 = new Category("cane", "icon");
-
+    $category1 = new Category("gatto");
+    $category1->setIcon("fa-solid fa-cat");
+    $category2 = new Category("cane");
+    $category2->setIcon("fa-solid fa-dog");
+    
     // tipologia
     try {
         $type1 = new TypeProducts("Cuscino per cani", "./img/cuscino.jpeg", 5, "cuccia", $category2);
@@ -54,7 +57,7 @@
             <p class="card-text">Prezzo: <?php echo $type1->getPrice(); ?> €</p>
             <p class="card-text">Tipologia: <?php echo $type1->getType(); ?></p>
             <span class="card-text">Categoria: <?php echo $type1->getCategory()->getCategoryName()?></span>
-            <span><i class="fa-solid fa-dog"></i></span>
+            <span><?php echo $category2->getIcon() ?></span>
         </div>
     </div>
 
