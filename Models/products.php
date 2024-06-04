@@ -10,6 +10,10 @@ class Products {
         $this->name = $_name;
         $this->image = $_image;
         $this->price = $_price;
+
+        if($_price < 0) {
+            throw new Exception("il prezzo non può essere negativo");
+        }
     }
     // getter
     public function getName() {

@@ -1,3 +1,34 @@
+<?php
+    require_once __DIR__ . "/models/products.php";
+    require_once __DIR__ . "/models/category.php";
+    require_once __DIR__ . "/models/typeProducts.php";
+
+    // categorie
+    $category1 = new Category("gatto", "icon");
+    $category2 = new Category("cane", "icon");
+
+    // tipologia
+    try {
+        $type1 = new TypeProducts("Cuscino per cani", "./img/cuscino.jpeg", 5, "cuccia", $category2);
+    } catch (Exception $e) {
+        echo "Errore: " . $e->getMessage() . "<br";
+    }
+    
+    try {
+        $type2 = new TypeProducts("Croccantini per gatto", "./img/croccantini.jpg", 25, "cibo", $category1);
+    } catch (Exception $e) {
+        echo "Errore: " . $e->getMessage() . "<br>";
+    }
+    
+    try {
+       $type3 = new TypeProducts("pallina in gomma", "./img/pallina.jpeg", 3, "giochi", $category2);
+ 
+    } catch (Exception $e) {
+        echo "Errore: " . $e->getMessage() . "<br>";
+    }
+    
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,22 +47,6 @@
 </head>
 
 <body>
-    <?php
-    require_once __DIR__ . "/models/products.php";
-    require_once __DIR__ . "/models/category.php";
-    require_once __DIR__ . "/models/typeProducts.php";
-
-    // categorie
-    $category1 = new Category("gatto", "icon");
-    $category2 = new Category("cane", "icon");
-
-    // tipologia
-    $type1 = new TypeProducts("Cuscino per cani", "./img/cuscino.jpeg", 46, "cuccia", $category2);
-    $type2 = new TypeProducts("Croccantini per gatto", "./img/croccantini.jpg", 25, "cibo", $category1);
-    $type3 = new TypeProducts("pallina in gomma", "./img/pallina.jpeg", 3, "giochi", $category2);
-
-    ?>
-
     <div class="card" style="width: 18rem;">
         <img src="<?php echo $type1->getImage(); ?>" class="card-img-top" alt="cuscino_cani">
         <div class="card-body">
